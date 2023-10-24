@@ -1,0 +1,20 @@
+diff --git a/cmake/flash/CMakeLists.txt b/cmake/flash/CMakeLists.txt
+index 392274891f..f64f66ef64 100644
+--- a/cmake/flash/CMakeLists.txt
++++ b/cmake/flash/CMakeLists.txt
+@@ -194,10 +194,10 @@ foreach(target flash debug debugserver attach)
+       USES_TERMINAL
+     )
+   else()
+-    add_custom_target(${target}
+-      COMMAND ${CMAKE_COMMAND} -E echo \"West was not found in path. To support
+-          '${CMAKE_MAKE_PROGRAM} ${target}', please create a west workspace.\"
+-      USES_TERMINAL
+-      )
++    #add_custom_target(${target}
++    #  COMMAND ${CMAKE_COMMAND} -E echo \"West was not found in path. To support
++    #      '${CMAKE_MAKE_PROGRAM} ${target}', please create a west workspace.\"
++    #  USES_TERMINAL
++    #  )
+   endif(WEST)
+ endforeach()

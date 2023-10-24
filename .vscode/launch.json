@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations":
+    [
+        {
+            "name": "NRF52",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/zephyr/zephyr.elf",
+            "cwd": "${workspaceFolder}/build",
+            "internalConsoleOptions": "neverOpen",
+            "miDebuggerPath": "arm-none-eabi-gdb",
+            //"preLaunchTask": "make and hide terminal",
+            "showDisplayString": true,
+            "visualizerFile": "${workspaceFolder}/.vscode/stl.gcc.natvis",
+            "debugServerPath": "JLinkGDBserverCL",
+            "debugServerArgs": "-device nRF52832_xxAA -if SWD -speed auto -strict -nogui -singlerun",
+            "serverStarted":"Connected to target",
+            "postRemoteConnectCommands":
+            [
+                { "text": "target remote localhost:2331" },
+                { "text": "load" },
+                { "text": "monitor reset" }
+            ]
+        }
+    ]
+}
